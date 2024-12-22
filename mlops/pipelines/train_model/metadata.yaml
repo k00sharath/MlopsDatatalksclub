@@ -1,0 +1,94 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    global_data_product:
+      uuid: training_set
+  downstream_blocks:
+  - hyper_parameter_tuning
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: training_data
+  retry_config: null
+  status: executed
+  timeout: null
+  type: global_data_product
+  upstream_blocks: []
+  uuid: training_data
+- all_upstream_blocks_executed: true
+  color: blue
+  configuration:
+    dynamic: true
+  downstream_blocks:
+  - hyper_parameter_tuning
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: dynamic_model_block
+  retry_config: null
+  status: executed
+  timeout: null
+  type: custom
+  upstream_blocks: []
+  uuid: dynamic_model_block
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - build_model
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: hyper_parameter_tuning
+  retry_config: null
+  status: updated
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - dynamic_model_block
+  - training_data
+  uuid: hyper_parameter_tuning
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: build_model
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - hyper_parameter_tuning
+  uuid: build_model
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-12-04 14:03:39.130877+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: train_model
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: train_model
+variables_dir: /home/src/mage_data/mlops
+widgets: []

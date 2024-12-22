@@ -1,0 +1,2 @@
+{"operation": "create", "resource": {"type": "pipeline", "uuid": "luminous_labyrinth"}, "timestamp": 1733290955, "user": null}
+{"operation": "create", "resource": {"type": "pipeline", "uuid": "train_model"}, "timestamp": 1733321020, "user": null}

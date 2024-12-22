@@ -1,0 +1,1 @@
+{"PU_DO": "str", "trip_distance": "float64", "lpep_pickup_datetime": "datetime64[ns]", "duration": "float64"}

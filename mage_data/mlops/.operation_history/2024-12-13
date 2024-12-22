@@ -1,0 +1,1 @@
+{"operation": "create", "resource": {"type": "pipeline", "uuid": "train_xgboost"}, "timestamp": 1734069811, "user": null}
